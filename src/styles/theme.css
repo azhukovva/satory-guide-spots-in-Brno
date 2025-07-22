@@ -1,0 +1,32 @@
+:root {
+  --font-phil: 'Philosopher', serif;
+  --font-body: 'Roboto', sans-serif;
+
+  --color-dark-bg: #1c1c1e;
+  --color-dark-text: #ffffff;
+
+  --color-light-bg: #ffffff;
+  --color-light-text: #1c1c1e;
+}
+
+body {
+  font-family: var(--font-body);
+  transition: background 0.3s, color 0.3s;
+}
+
+.app.light {
+  background-color: var(--color-light-bg);
+  color: var(--color-light-text);
+}
+
+.app.dark {
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-text);
+}
+
+.switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}

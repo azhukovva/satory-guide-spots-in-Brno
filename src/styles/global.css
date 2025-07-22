@@ -1,0 +1,42 @@
+:root {
+  --font-phil: "Philosopher", serif;
+  --font-body: "Roboto", sans-serif;
+
+  --color-dark-bg: #1e1e1e;
+  --color-dark-text: #ffffff;
+
+  --color-light-bg: #ffffff;
+  --color-light-text: #1e1e1e;
+
+  --color-light-main: #F597A3;
+  --color-dark-main: #0555B4;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #1e1e1e;
+  color: white;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: all 0.4s ease;
+}
+
+body.light {
+  background: var(--color-light-bg);
+  color: var(--color-light-text);
+}
+
+.content {
+  padding: 0 100px;
+  padding-top: 72px;
+  position: relative;
+}
+
+@media (max-width: 600px) {
+  .content {
+    padding: 0 1rem;
+    justify-content: center;
+  }
+}
+
