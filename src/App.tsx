@@ -23,9 +23,9 @@ function App() {
       <div className="content">
         <FirstPage theme={theme} />
         <div style={{ padding: "100px 0" }}>
-          <Map />
+          <Map theme={theme}/>
         </div>
-        <Overview />
+        <Overview theme={theme}/>
       </div>
     </div>
   );

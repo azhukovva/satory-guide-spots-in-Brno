@@ -21,7 +21,12 @@ const coffeeShops = [
   },
 ];
 
-const Map: React.FC = () => {
+const darkTile =
+  "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png";
+const lightTile =
+  "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+
+const Map: React.FC<{ theme: string }> = ({ theme }) => {
   const position: [number, number] = [49.1951, 16.6068];
   return (
     <MapContainer
@@ -32,8 +37,12 @@ const Map: React.FC = () => {
       dragging={false}
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution={
+          theme === "dark"
+            ? '&copy; <a href="https://carto.com/attributions">CARTO</a>'
+            : '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }
+        url={theme === "dark" ? darkTile : lightTile}
       />
       {coffeeShops.map((shop, index) => (
         <Marker key={index} position={shop.position}>
