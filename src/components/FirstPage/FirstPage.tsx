@@ -28,15 +28,15 @@ const FirstPage: React.FC<Props> = ({ theme }) => {
           </span>
           <span className="subtitle">you must visit in Brno</span>
         </div>
-        <div className="right-content">
+        {/* <div className="right-content">
           {theme === "light" && <img src={image} alt="" />}
-        </div>
+        </div> */}
       </div>
       <div className="bottom-content">
-        <button className={`go-button ${theme}`} onClick={scrollToOverview}>
-          LEEEEET’S GO <Icon icon={icons.down} width={26} />
-        </button>
-        <div className="memeComment"style={{ opacity: ".5", textAlign: "right", lineHeight: "1.5" }}>
+        {/* <button className={`go-button ${theme}`} onClick={scrollToOverview}>
+          LET’S GO <Icon icon={icons.down} width={26} />
+        </button> */}
+        {/* <div className="memeComment"style={{ opacity: ".5", textAlign: "right", lineHeight: "1.5" }}>
           {theme === "light" ? (
             <span>
               * Light Mode is with memes!
@@ -50,7 +50,7 @@ const FirstPage: React.FC<Props> = ({ theme }) => {
               You can switch to Cringe one from header:3
             </span>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import "./itemCard.css";
 
 type Props = {
@@ -6,18 +7,20 @@ type Props = {
   onClick?: () => void;
 };
 
-const ItemCard = ({ title, image, onClick }: Props) => {
+const ItemCard = forwardRef<HTMLDivElement, Props> (({ title, image, onClick }, ref) => {
   return (
     <div
+      id={`${title}-card`}
       className="item-card"
       style={{ backgroundImage: `url(${image})` }}
       onClick={onClick}
+      ref={ref}
     >
       <div className="overlay">
         <span className="card-title">{title}</span>
       </div>
     </div>
   );
-};
+});
 
 export default ItemCard;

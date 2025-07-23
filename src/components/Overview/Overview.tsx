@@ -1,14 +1,14 @@
 import "./overview.css";
 import ItemCard from "../ItemCard/ItemCard";
 import { Cafe, coffeeShops } from "../../data/coffeeShops";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import CafeDetailsPanel from "../CafeDetailsPanel/CafeDetailsPanel";
 
 type OverviewProps = {
   theme: string;
 };
 
-const Overview = ({theme}: OverviewProps) => {
+const Overview = ({ theme }: OverviewProps) => {
   const [selectedCafe, setSelectedCafe] = useState<Cafe | null>(null);
 
   const handleCardClick = (cafe: Cafe) => {

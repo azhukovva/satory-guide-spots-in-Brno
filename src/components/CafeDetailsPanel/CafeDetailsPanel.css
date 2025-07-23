@@ -1,16 +1,14 @@
 #cafe-details {
   width: 100%;
   max-width: 100%;
-  padding: 2rem 0;
+  padding: 3rem 0;
 }
 
 .cafe-details-container {
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  gap: 4rem;
-  background-color: var(--color-light-bg);
-  color: var(--color-light-text);
+  gap: 6rem;
   border-radius: 1rem;
   padding: 2rem;
   animation: slideIn 0.4s ease-out;
@@ -25,7 +23,8 @@
   }
 }
 
-.titleDeatils {
+.titleDetails {
+  max-width: 80%;
   font-size: 8rem;
   font-weight: 900;
   letter-spacing: -3%;
@@ -34,29 +33,66 @@
 
 .cafe-info {
   flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  position: relative;
 }
 
 .adressTime {
-    font-family: var(--font-phil);
-    font-size: 1.2rem;
+  font-family: var(--font-phil);
+  font-size: 1.2rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 4rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.up-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .description {
-    padding: 1rem 2.5rem 1.5rem 1rem;
-    background-color: var(--color-light-main);
-    border-radius:  12px;
-    font-weight: 200;
-    /* color: white; */
-    font-style: italic;
-    font-size: 1.2rem;
+  padding: 1rem 2.5rem 1.5rem 1rem;
+  background-color: var(--color-light-main);
+  border-radius: 12px;
+  font-weight: 200;
+  /* color: white; */
+  font-style: italic;
+  font-size: 1.2rem;
 }
 
 .description.dark {
-    background-color: var(--color-dark-main);
+  background-color: var(--color-dark-main);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: right;
+  padding-top: 2rem;
+}
+
+.on-map-button {
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  width: fit-content;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid var(--color-light-text)
 }
 
 .cafe-images {
@@ -87,13 +123,73 @@
   margin-right: 0.5rem;
 }
 
+.spinner-overlay {
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 300px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-color: rgba(255, 255, 255, 0.7);
+ z-index: 1;
+ border-radius: 12px;
+ display: "flex";
+ gap: 1rem;
+}
+.spinner {
+ width: 2rem;
+ height: 2rem;
+ border: 4px solid #ccc;
+ border-top-color: #333;
+ border-radius: 50%;
+ animation: spin 1s linear infinite;
+}
+@keyframes spin {
+ to {
+   transform: rotate(360deg);
+ }
+}
+
 @media (max-width: 768px) {
   .cafe-details-container {
     flex-direction: column;
+    gap: 3rem;
+  }
+
+  .cafe-info {
+    gap: 0;
+  }
+
+  .up-button {
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    background-color: transparent;
+  }
+
+  .titleDetails {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -3%;
+    line-height: 3rem;
+  }
+
+  .adressTime {
+    gap: 1rem;
   }
 
   .cafe-images {
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cafe-images img {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+    border-radius: 12px;
   }
 }

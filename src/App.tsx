@@ -19,12 +19,15 @@ function App() {
 
   return (
     <div>
+       <video className="video" autoPlay muted loop playsInline>
+        <source src="/video_bg.mp4" type="video/mp4" />
+      </video>
       <Header toggleTheme={toggleTheme} theme={theme} />
       <div className="content">
         <FirstPage theme={theme} />
-        <div style={{ padding: "100px 0" }}>
+        {/* <div style={{ padding: "100px 0" }}>
           <Map theme={theme}/>
-        </div>
+        </div> */}
         <Overview theme={theme}/>
       </div>
     </div>

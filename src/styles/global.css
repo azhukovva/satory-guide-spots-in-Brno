@@ -11,8 +11,8 @@
   --color-light-main: #F597A3;
   --color-dark-main: #0555B4;
 
-  /* --secondary-light: #F597A3;
-  --secondary-dark: #0555B4; */
+  --color-light-dark: #975B78;
+  --color-dark-dark: #223E60;
 }
 
 body {
@@ -34,6 +34,16 @@ body.light {
   padding: 0 100px;
   padding-top: 72px;
   position: relative;
+}
+
+.video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
 }
 
 @media (max-width: 600px) {
