@@ -48,7 +48,7 @@ body.light {
 
 @media (max-width: 600px) {
   .content {
-    padding: 0 1rem;
+    padding: 0rem;
     justify-content: center;
   }
 }

@@ -109,7 +109,7 @@ const CafeDetailsPanel: React.FC<{
             )}
             <div className="row">
               <div>Adress:</div>
-              <span className="info-text">{cafe.location.address}</span>
+              <span>{cafe.location.address}</span>
             </div>
           </div>
         </div>
