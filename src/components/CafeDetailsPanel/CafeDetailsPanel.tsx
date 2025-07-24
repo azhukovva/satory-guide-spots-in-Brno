@@ -19,6 +19,22 @@ const CafeDetailsPanel: React.FC<{
 
   return (
     <div className="cafe-details-container">
+      <div style={{width: "100%", justifyContent: "center", display: "flex"}}>
+        <button
+          className="up-button-mobile"
+          onClick={handleUpClick}
+          style={{
+            border: theme === "dark" ? "1px solid #fff" : "1px solid #1e1e1e",
+          }}
+        >
+          <Icon
+            icon={icons.up}
+            width={30}
+            color={theme === "dark" ? "#ffffff" : "#1e1e1e"}
+          />
+        </button>
+      </div>
+
       <div className="cafe-info">
         {!isMapLoaded && !cafe.name.includes("Brunche's") && (
           <div className="spinner-overlay">
@@ -30,11 +46,18 @@ const CafeDetailsPanel: React.FC<{
           <span>
             Unfortunatly, we can't upload map for this place. You can access the
             location{" "}
-            <a style={{color: "#515151", fontStyle: "italic"}} href="https://maps.app.goo.gl/KFtQQXQojWgg2Nh29">here</a> :)
+            <a
+              style={{ color: "#515151", fontStyle: "italic" }}
+              href="https://maps.app.goo.gl/KFtQQXQojWgg2Nh29"
+            >
+              here
+            </a>{" "}
+            :)
           </span>
         )}
         {!cafe.name.includes("Brunche's") && (
           <iframe
+            className="map"
             style={{
               borderRadius: "12px",
               border: "1px solid transparent",
@@ -49,36 +72,46 @@ const CafeDetailsPanel: React.FC<{
           />
         )}
 
-        <div>
-               <span className="row" style={{ alignItems: "flex-start" }}>
+        <div className="text">
+          <span className="row">
             <span className="titleDetails">{cafe.name}</span>
-            <button className="up-button" onClick={handleUpClick} style={{border: theme === 'dark' ? "1px solid #fff" : "1px solid #1e1e1e" }}>
-              <Icon icon={icons.up} width={30} color={theme === "dark" ? "#ffffff" : "#1e1e1e"} />
+            <button
+              className="up-button"
+              onClick={handleUpClick}
+              style={{
+                border:
+                  theme === "dark" ? "1px solid #fff" : "1px solid #1e1e1e",
+              }}
+            >
+              <Icon
+                icon={icons.up}
+                width={30}
+                color={theme === "dark" ? "#ffffff" : "#1e1e1e"}
+              />
             </button>
           </span>
           <div className="adressTime">
             <div className="row">
-              <span>Open hours:</span>
-              <span>{cafe.hours}</span>
+              <div>Open hours:</div>
+              <span className="info-text">{cafe.hours}</span>
             </div>
             {cafe.weekendHours && (
               <div className="row">
-                <span>Weekend:</span>
-                <span>{cafe.weekendHours}</span>
+                <div>Weekend:</div>
+                <span className="info-text">{cafe.weekendHours}</span>
               </div>
             )}
             {cafe.closed && (
               <div className="row">
-                <span>Closed:</span>
-                <span>{cafe.closed}</span>
+                <div>Closed:</div>
+                <span className="info-text">{cafe.closed}</span>
               </div>
             )}
             <div className="row">
-              <span>Adress:</span>
-              <span>{cafe.location.address}</span>
+              <div>Adress:</div>
+              <span className="info-text">{cafe.location.address}</span>
             </div>
           </div>
-    
         </div>
       </div>
 
