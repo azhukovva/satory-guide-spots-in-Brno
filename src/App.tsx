@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import FirstPage from "./components/FirstPage/FirstPage";
 import Header from "./components/Header/Header";
-import Map from "./components/Map/Map";
 import "./styles/global.css";
 import Overview from "./components/Overview/Overview";
 
@@ -20,7 +19,8 @@ function App() {
   return (
     <div>
        <video className="video" autoPlay muted loop playsInline>
-        <source src="/video_bg.mp4" type="video/mp4" />
+        <source src={`${process.env.PUBLIC_URL}/video_bg.mp4`} type="video/mp4" />
+
       </video>
       <Header toggleTheme={toggleTheme} theme={theme} />
       <div className="content">
